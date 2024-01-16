@@ -109,7 +109,7 @@ export const Form: FC<FormProps> = (props) => {
             </Grid>
           </Grid>
           <Button type='submit'>
-            Submit
+            Confirm
           </Button>
         </form>
       </div>

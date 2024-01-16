@@ -7,8 +7,10 @@ export const MuiTextField: Components<Theme>['MuiTextField'] = {
     inputProps: {
       sx: {
         '&::placeholder': {
-          fontWeight: 400,
-          opacity: 0.5,
+          fontWeight: 500,
+          opacity: 0.4,
+          fontSize: 18,
+          fontFamily: 'Space Grotesk, sans-serif',
         },
       },
     },

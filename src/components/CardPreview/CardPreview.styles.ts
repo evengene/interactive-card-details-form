@@ -107,4 +107,11 @@ export const useStyles = makeStyles()((theme) => ({
     },
   },
   cardBackCvc: {},
+  wording: {
+    position: 'absolute',
+    bottom: 47,
+    [theme.breakpoints.down('md')]: {
+      display: 'none',
+    },
+  },
 }));

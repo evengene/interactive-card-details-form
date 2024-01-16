@@ -6,6 +6,7 @@ import { CardFields } from '../../CreditCardForm.enumerations';
 import { useStyles } from './CardPreview.styles';
 
 import type { CardPreviewProps } from './CardPreview.types';
+import { Images } from '../../assets';
 
 export const CardPreview: FC<CardPreviewProps> = (props) => {
 
@@ -57,6 +58,7 @@ export const CardPreview: FC<CardPreviewProps> = (props) => {
             {renderCardFieldFromProps(CardFields.Cvc)}
           </Typography>
         </div>
+        <img className={classes.wording} src={Images.CreditCardBackWording} alt="wording"/>
       </div>
     </Grid>
   );
