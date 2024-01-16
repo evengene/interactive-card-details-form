@@ -15,7 +15,14 @@ export const Content = () => {
 
   const [ formSubmitted, setFormSubmitted ] = useState<boolean>(false);
 
-  const { values, errors, handleChange, handleSubmit, setFieldValue } = useFormik({
+  const {
+    errors,
+    handleChange,
+    handleSubmit,
+    setFieldValue,
+    touched,
+    values,
+  } = useFormik({
     initialValues: INITIAL_VALUES,
     onSubmit: (values) => {
       setFormSubmitted(true);
@@ -26,15 +33,18 @@ export const Content = () => {
   });
 
   return (
-    <Container maxWidth='lg' className={classes.containerWrapper}>
-      <Grid container alignItems='center' className={classes.formCardContainer}>
+    <Container maxWidth="lg" className={classes.containerWrapper}>
+      <Grid container alignItems="center" className={classes.formCardContainer}>
         <CardPreview formData={values}/>
         {formSubmitted
           ? <ConfirmationSection/>
-          : <Form values={values} errors={errors}
-                  handleChange={handleChange}
-                  handleSubmit={handleSubmit}
-                  setFieldValue={setFieldValue}
+          : <Form
+            errors={errors}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            setFieldValue={setFieldValue}
+            touched={touched}
+            values={values}
           />
         }
       </Grid>

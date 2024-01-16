@@ -11,7 +11,14 @@ import type { FormProps } from './Form.types';
 
 export const Form: FC<FormProps> = (props) => {
 
-  const { values, errors, handleChange, handleSubmit, setFieldValue } = props;
+  const {
+    errors,
+    handleChange,
+    handleSubmit,
+    setFieldValue,
+    touched,
+    values,
+  } = props;
 
   const { classes } = useStyles();
 
@@ -28,8 +35,8 @@ export const Form: FC<FormProps> = (props) => {
             {COPY.CardNameLabel}
           </Typography>
           <TextField
-            error={Boolean(errors[CardFields.CardName])}
-            helperText={errors[CardFields.CardName]}
+            error={Boolean(touched[CardFields.CardName] && errors[CardFields.CardName])}
+            helperText={touched[CardFields.CardName] && errors[CardFields.CardName]}
             id={CardFields.CardName}
             name={CardFields.CardName}
             onChange={handleChange}
@@ -41,8 +48,8 @@ export const Form: FC<FormProps> = (props) => {
             {COPY.CardNumberLabel}
           </Typography>
           <TextField
-            error={Boolean(errors[CardFields.CardNumber])}
-            helperText={errors[CardFields.CardNumber]}
+            error={Boolean(touched[CardFields.CardNumber] && errors[CardFields.CardNumber])}
+            helperText={touched[CardFields.CardNumber] && errors[CardFields.CardNumber]}
             id={CardFields.CardNumber}
             name={CardFields.CardNumber}
             onChange={formatCardValue}
@@ -65,8 +72,8 @@ export const Form: FC<FormProps> = (props) => {
           <Grid container spacing={2}>
             <Grid item xs={3}>
               <TextField
-                error={Boolean(errors[CardFields.ExpirationMonth])}
-                helperText={errors[CardFields.ExpirationMonth]}
+                error={Boolean(touched[CardFields.ExpirationMonth] && errors[CardFields.ExpirationMonth])}
+                helperText={touched[CardFields.ExpirationMonth] && errors[CardFields.ExpirationMonth]}
                 id={CardFields.ExpirationMonth}
                 inputProps={{ maxLength: 2 }}
                 name={CardFields.ExpirationMonth}
@@ -77,8 +84,8 @@ export const Form: FC<FormProps> = (props) => {
             </Grid>
             <Grid item xs={3}>
               <TextField
-                error={Boolean(errors[CardFields.ExpirationYear])}
-                helperText={errors[CardFields.ExpirationYear]}
+                error={Boolean(touched[CardFields.ExpirationYear] && errors[CardFields.ExpirationYear])}
+                helperText={touched[CardFields.ExpirationYear] && errors[CardFields.ExpirationYear]}
                 id={CardFields.ExpirationYear}
                 inputProps={{ maxLength: 2 }}
                 name={CardFields.ExpirationYear}
@@ -89,9 +96,9 @@ export const Form: FC<FormProps> = (props) => {
             </Grid>
             <Grid item xs={6}>
               <TextField
-                error={Boolean(errors[CardFields.Cvc])}
+                error={Boolean(touched[CardFields.Cvc] && errors[CardFields.Cvc])}
                 fullWidth
-                helperText={errors[CardFields.Cvc]}
+                helperText={touched[CardFields.Cvc] && errors[CardFields.Cvc]}
                 id={CardFields.Cvc}
                 inputProps={{ maxLength: 4 }}
                 name={CardFields.Cvc}
