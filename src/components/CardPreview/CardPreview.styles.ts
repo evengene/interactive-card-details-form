@@ -72,9 +72,9 @@ export const useStyles = makeStyles()((theme) => ({
     }
   },
   cardFrontNumber: {
+    letterSpacing: 3.4,
     [theme.breakpoints.down('md')]: {
       fontSize: 18,
-      marginTop: theme.spacing(3.75),
     },
   },
   cardBottom: {

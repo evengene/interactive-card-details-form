@@ -11,7 +11,7 @@ export const ConfirmationSection = () => {
 
   return (
     <div className={classes.confirmationBlock}>
-      <img src={Images.ConfirmIcon} alt="check image"/>
+      <img src={Images.ConfirmIcon} alt="check icon"/>
       <Typography variant="h2">
         {COPY.ThankYou}
       </Typography>
