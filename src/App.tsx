@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ThemeProvider } from './providers/ThemeProvider';
 import { Content } from './components/Content/Content';
+import { ThemeProvider } from './theme';
 import { useStyles } from './App.styles';
 
 function App() {
